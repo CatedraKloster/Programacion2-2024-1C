@@ -1,0 +1,143 @@
+Repaso: 
+*Uso de variables. 
+	Variables compuestas: vectores y matrices.
+	puntero simple->vectores
+	puntero fila->matrices
+
+* Registros: struct (c) ; class (C++)
+
+* Funciones
+
+* POO
+	Interacción entre un conjunto de objetos
+	Determinar cuáles son los objetos que participan en nuestro sistema
+	Programa: 	código en las clases (específico de cada objeto)	
+			código en cada una de las partes del programa (clases o funciones globales)
+
+	Clase obj, abc;
+	obj.Mostrar();
+	obj.CambiarColor(verde);
+
+Clase: molde donde se definen las propiedades y los métodos de los objetos de esas clase.
+Propiedades (variables de la clase) todo aquellas cosas (tienen una magnitud) que el objeto necesita definir.
+Métodos (funciones de la clase) determinan el comportamiento de los objetos: que puede hacer un objeto.
+Una clase es un TIPO DE DATO
+
+Objeto:variable de una clase.Instancia de una clase
+
+
+class Nombre{
+private:///propiedades
+
+
+public:///métodos
+
+};
+
+Encapsulamiento:protege a los datos contenidos en los objetos. Las propiedades se ubican en la parte private
+La única forma de acceder a los datos de un objeto es mediante métodos definidos dentro de esa clase.
+
+Métodos:
+sets()-> establecer datos de cada propiedad. Es aquí donde se puede establecer validaciones.
+
+gets()-> el objeto comunique al mundo externo el valor de cada una de sus propiedades.
+
+Constructores: métodos que tienen el mismo nombre que la clase, no devuelven nada y pueden recibir parámetros
+Se ejecutan de manera automática al momento del nacimiento del objeto. Permite inicializar los objetos.
+Puedo tener varios constructores para una misma clase.
+Es posible porque en C++ se pueden SOBRECARGAR LAS FUNCIONES
+
+Sobrecarga de funciones: tener funciones distintas con el mismo nombre. Para que coexistan funciones con el 
+mismo nombre se tienen que diferencia por los parámetros que reciben.
+
+En C++ las funciones aceptan valores por defecto para los parámetros.Si la función definió que espera 2
+valores f1(int a, int b) puedo hacer que esos valores se establezcan por defecto y no sea necesario enviarlos
+en la llamada. La forma es 
+
+void f1(int a=8, int b=0);
+
+///
+f1();
+f1(3);
+f1(3,3);
+///
+
+Destructor: es un método que tiene el mismo nombre que la clase antecedido por el ~.
+No devuelve nada, no recibe nada y sólo puede haber uno. Se ejecuta cuando el objeto muere.
+
+Adentro de las clases existe un puntero oculto this. Este puntero contiene la dirección del objeto que llama 
+al método.
+
+Herencia: a partir de una clase base se pueden desarrollar un conjunto de clase derivadas.
+Si hay un conjunto de objetos que pueden agruparse en una categoría superior que los contenga, se puede
+aplicar este mecanismo.
+Auto, moto, bici, carro ->vehículo
+Docentes, gradudados, alumnos -> personas.
+Clase derivada ES Clase base
+
+Composición: usar objetos de una clase como propiedad de otra clase.
+Clase TIENE objeto de otra clase.
+
+/////
+Archivos
+
+class Derivada:public Base{
+private:
+	///viene todo lo que está en la parte privada de la clase base
+	///pero no va a ser accesible de manera directa. Tener que usar los métodos de la base
+public:
+	///viene todo lo que está en la parte publica de la clase base
+
+};
+
+class Derivada:private Base{
+private:
+	///viene todo lo que está en la parte privada de la clase base
+	///viene todo lo que está en la parte publica de la clase base
+public:
+
+
+};
+
+
+class Base{
+	protected:/// no va a hacer accesible fuera de la clase, pero si es accesible en las clases derivadas
+
+}
+
+///
+ARCHIVOS
+Formato del registro: mediante una clase.
+
+FILE *p-> permite relacionar el archivo físico con el programa en ejecución
+
+p=fopen(archivo, modo);
+p contien NULL no se pudo hacer la apertura
+
+fwrite(direccion_variable, tamaño_variable, cantidad_registros, puntero_FILE);
+fread(direccion_variable, tamaño_variable, cantidad_registros, puntero_FILE);
+fclose(p);
+
+fseek(punteroFILE, desplazamiento, desde_donde); 0: principio; 1: posición actual; 2: fin de archivo
+
+ftell(punteroFILE)-> devuelve la cantidad de bytes entre el inicio del archivo y la posición actual 
+del puntero FILE
+
+
+Alta-> agregar registros
+Baja-> borrar registros (lógica, física)
+Modificación-> modificar valores de un registro existente
+Listado-> mostrar todos o un conjunto de registros.
+
+
+
+
+
+
+
+
+
+
+
+
+
