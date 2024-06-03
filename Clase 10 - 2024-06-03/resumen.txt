@@ -1,0 +1,86 @@
+POO
+Clases, objeto, mecanismos para la creación de las clases y el uso de los objetos.
+
+Propiedades, métodos. Especificadores de acceso: private, public y protected
+
+constructores, destructores, gets(), sets().
+
+Archivos: crear archivos con un formato definido por nosotros, para representar las cosas que los sistemas nos exijan.
+
+El formato lo establecimos por medio de registros, y los registros los creamos con class
+
+fopen()
+fclose()
+fread()
+fwrite()
+fseek()
+ftell()
+
+ABML
+Consultas para generar información a partir de los datos de uno o más archivos.
+
+Vectores que se declaraban de un tamaño fijo que no podía variar. Estáticas.
+
+Asignación dinámica de memoria-> generar variables en tiempo de ejecución. 
+
+new y delete
+new-> pedimos memoria.
+Si se obtiene la memoria, new devuelve la dirección inicial de esa variable en la memoria.
+Si no lo obtiene, devuelve NULL.
+Una vez creado el vector, funciona de la misma manera que un vector estático de ese tipo.
+Cuando yo no sea necesario el vector creado, se lo puede eliminar devolviendo la memoria pedida (delete).
+
+int *pInt;
+pInt=new int[10];
+if(pInt==NULL) return....
+//usamos pInt
+
+///terminamos de usarlo
+delete []pInt;
+
+Cadena, Pila y Cola-> como los objetos de estas clases no tenían un tamaño definido de antemano
+usamos los constructores para crear los objetos, y los destructores para liberar la memoria pedida.
+
+Alumno *pInt, obj;
+pInt=new Alumno[10];
+if(pInt==NULL) return....
+//usamos pInt
+pInt[0].Cargar();
+
+pint[0]=obj;
+///terminamos de usarlo
+delete []pInt;
+
+
+Sobrecarga de operadores: permite asignarle a los operadores existentes en el lenguaje una funcionalidad nueva, codificando métodos con esos operadores dentro de las clases.
+
+Para sobrecargar los métodos deben llamarse de la siguientes manera
+
+	valor_devuelto operatorOPERADOR(parámetro)
+
+	bool Articulo::operator==(int valor){
+
+	}
+
+Como conocemos que existe el mecanismo de la sobrecarga de funciones, puedo tener varias sobrecargas para un mismo operador
+
+	bool Articulo::operator==(Articulo &ref){
+
+	}
+
+	bool Articulo::operator==(const char *cad){
+
+	}
+
+
+Pilas: LIFO
+
+Colas: FIFO
+
+
+
+
+
+
+
+
